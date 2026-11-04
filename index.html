@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f8ff">
+  <meta name="description" content="Explore statistics and probability with data, charts, averages, and interactive chance experiments for JHS learners.">
+  <title>Statistics &amp; Probability — JHS Math Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">Σ</span><span>JHS <strong>Math Lab</strong></span></a>
+    <nav aria-label="Main navigation"><a href="#data">Data &amp; averages</a><a href="#chance">Probability</a><a href="#practice">Practice</a></nav>
+    <span class="level-tag">JHS · Data</span>
+  </header>
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow">MAKE SENSE OF THE DATA</p><h1>Find the story<br><span>in the numbers.</span></h1><p>Organise data, explore averages, and experiment with chance. Change the numbers and discover what the results tell you.</p><a class="button primary" href="#data">Start exploring <span aria-hidden="true">↓</span></a></div>
+      <div class="hero-art" aria-hidden="true"><div class="hero-equation">mean · median · mode</div><div class="hero-bars"><i style="height:35%"></i><i style="height:58%"></i><i style="height:45%"></i><i style="height:82%"></i><i style="height:66%"></i><i style="height:95%"></i></div><span class="hero-caption">Every data set has a story</span></div>
+    </section>
+
+    <section class="section" id="data">
+      <div class="section-heading"><div><p class="eyebrow">01 · DATA &amp; AVERAGES</p><h2>Explore a data set.</h2></div><p>Enter whole numbers separated by commas. See the data represented in a bar chart and calculate its mean, median, mode, and range.</p></div>
+      <div class="data-card">
+        <div class="data-controls"><label class="field-label" for="data-input">Your data (up to 20 whole numbers)</label><textarea id="data-input" rows="3" spellcheck="false" aria-describedby="data-help">4, 6, 6, 8, 11, 13</textarea><p id="data-help" class="hint">Separate each number with a comma. Try changing or adding values.</p><div class="dataset-actions"><button id="analyse-data" class="button primary" type="button">Analyse data</button><button id="sample-data" class="button secondary" type="button">Load sample</button></div><p id="data-error" class="error" role="alert"></p><div class="stats-grid" aria-live="polite"><div class="stat"><span>MEAN</span><strong id="mean">—</strong><small>sum ÷ count</small></div><div class="stat"><span>MEDIAN</span><strong id="median">—</strong><small>middle value</small></div><div class="stat"><span>MODE</span><strong id="mode">—</strong><small>most frequent</small></div><div class="stat"><span>RANGE</span><strong id="range">—</strong><small>largest − smallest</small></div></div></div>
+        <div class="chart-panel"><div class="chart-heading"><div><span class="eyebrow">BAR CHART</span><h3>How often does each value appear?</h3></div><span id="data-count" class="chart-count">6 values</span></div><div id="bar-chart" class="bar-chart" role="img" aria-label="Bar chart showing frequency of each data value"></div><p class="chart-note">Each bar shows the frequency (how many times a value appears).</p></div>
+      </div>
+      <div class="definition-row"><div><span class="definition-icon">x̄</span><p><strong>Mean</strong> — share the total equally.</p></div><div><span class="definition-icon">↕</span><p><strong>Median</strong> — the middle value after sorting.</p></div><div><span class="definition-icon">●</span><p><strong>Mode</strong> — the most common value.</p></div><div><span class="definition-icon">↔</span><p><strong>Range</strong> — the spread from lowest to highest.</p></div></div>
+    </section>
+
+    <section class="section tinted" id="chance">
+      <div class="section-heading"><div><p class="eyebrow">02 · PROBABILITY EXPERIMENT</p><h2>Try your luck. Check the chance.</h2></div><p>Choose an experiment and run it repeatedly. Compare the experimental results with the theoretical probability.</p></div>
+      <div class="chance-card">
+        <div class="chance-controls"><p class="eyebrow">CHOOSE AN EXPERIMENT</p><label class="field-label" for="experiment">What would you like to try?</label><select id="experiment"><option value="coin">Flip a coin — heads</option><option value="die">Roll a die — roll a 6</option><option value="spinner">Spin a spinner — land on blue</option></select><div class="theory-box"><span>THEORETICAL PROBABILITY</span><strong id="theory">1 in 2 <small>(50%)</small></strong><p id="theory-detail">A fair coin has 2 equally likely sides.</p></div><button id="run-experiment" class="button primary" type="button">Run 10 trials</button><button id="reset-experiment" class="text-button" type="button">Reset results</button></div>
+        <div class="experiment-results"><div class="result-top"><div><span class="eyebrow">YOUR EXPERIMENT</span><h3 id="experiment-title">Coin flips</h3></div><div class="trial-count"><strong id="trial-count">0</strong><span>trials</span></div></div><div class="probability-meter"><div class="meter-labels"><span>Experimental chance of target</span><strong id="experimental-probability">—</strong></div><div class="meter-track"><span id="meter-fill"></span><i id="theory-marker" title="Theoretical probability"></i></div><div class="meter-key"><span><i class="meter-dot"></i> Experimental</span><span><i class="marker-key"></i> Theoretical</span></div></div><div class="outcome-area"><span class="outcome-label">LATEST RESULTS</span><div id="outcomes" class="outcomes" aria-live="polite"><span class="empty-outcomes">Run an experiment to see outcomes.</span></div></div><p id="experiment-message" class="experiment-message">As you run more trials, the experimental probability often gets closer to the theoretical probability—but random results can vary.</p></div>
+      </div>
+    </section>
+
+    <section class="section practice-section" id="practice">
+      <div class="section-heading"><div><p class="eyebrow">03 · CHECK YOUR UNDERSTANDING</p><h2>Statistics &amp; probability practice.</h2></div><p>Try four questions. Get instant feedback and an explanation after each answer.</p></div>
+      <div class="quiz-card"><div class="quiz-progress"><span id="quiz-count">QUESTION 1 OF 4</span><div class="progress-track"><span id="progress-fill"></span></div></div><h3 id="question">What is the mean of 2, 4, and 6?</h3><div id="answers" class="answers" role="group" aria-label="Answer choices"></div><p id="feedback" class="feedback" aria-live="polite"></p><div class="quiz-footer"><span id="score">Score: 0</span><button class="button primary" id="quiz-action" type="button" disabled>Check answer</button></div></div>
+    </section>
+    <section class="finish-banner"><div><p class="eyebrow">KEEP INVESTIGATING</p><h2>Numbers can surprise you.</h2><p>Change the data, run more trials, and see what you discover.</p></div><a class="button light" href="#data">Explore again <span aria-hidden="true">↑</span></a></section>
+  </main>
+  <footer><span>JHS Math Lab · Statistics &amp; Probability</span><span>Made for curious learners ✦</span></footer>
+</body>
+</html>
